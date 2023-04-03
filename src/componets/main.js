@@ -96,18 +96,18 @@ export default function Example({ postData }) {
     }
 
     return (
-        <div className="grid grid-cols-4  mt-24 select-none	">
+        <div className="grid grid-cols-3  mt-1 select-none">
             <SideMenu sethtml={sethtml} setIntonation_dict={setIntonation_dict} postData={postData} enabled={enabled} setEnabled={setEnabled} />
             <div className="h-96 col-span-2">
-                <Stats />
+                {/* <Stats /> */}
                 <div className="">
                     {/*<div className=" mr-40 ml-24 mt-10 text-5xl leading-normal ">*/}
-                    <div className="ml-20 mt-10 text-6xl tracking-wide leading-loose  h-196 overflow-scroll">
+                    <div className="ml-20 mt-10 text-2xl tracking-wide leading-loose  h-196 overflow-scroll">
                         <div >{ReactHtmlParser(html, options)}</div>
                     </div >
                 </div>
             </div >
-            <div className="px-16 " />
+            <div className="px-16" />
         </div>
     )
 }

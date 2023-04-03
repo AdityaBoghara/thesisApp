@@ -72,13 +72,13 @@ export default function Example({ sethtml, setIntonation_dict, postData, enabled
 
 
     return (
-        <div className="flex-1 flex flex-col min-h-0 px-16 font-light">
+        <div className="flex-1 flex flex-col min-h-0 px-8 font-light">
             <Toggle enabled={enabled} setEnabled={setEnabled} />
-            <div className=" flex flex-col px-8 py-5 rounded-xl mt-6 bg-gray-50 border border-gray-200">
-                <label className="text-4xl  text-gray-900">Part of the speech</label>
-                <p className="text-lg leading-5 text-gray-500 mt-5">What type of word do you wish to feel? </p>
-                <fieldset className="mt-5">
-                    <div className="space-y-7">
+            <div className=" flex flex-col px-6 py-5 rounded-xl mt-2 bg-gray-50 border border-gray-200">
+                <label className="text-2xl  text-gray-900">Part of the speech</label>
+                <p className="text-sm leading-5 text-gray-500 mt-2">What type of word do you wish to feel? </p>
+                <fieldset className="mt-2">
+                    <div className="space-y-2">
                         {semantics.map((level, index) => (
                             < div key={level.id} className="flex items-center" >
                                 <input
@@ -97,11 +97,11 @@ export default function Example({ sethtml, setIntonation_dict, postData, enabled
                     </div>
                 </fieldset>
             </div>
-            <div className=" flex flex-col px-8 py-5 rounded-xl mt-6 bg-gray-50 border border-gray-200">
+            <div className=" flex flex-col px-8 py-5 rounded-xl mt-2 bg-gray-50 border border-gray-200">
                 <label className="text-4xl  text-gray-900">Information represented</label>
-                <p className="text-lg leading-5 text-gray-500 mt-5">What information do you wish to represent? </p>
-                <fieldset className="mt-5">
-                    <div className="space-y-7">
+                <p className="text-lg leading-5 text-gray-500 mt-2">What information do you wish to represent? </p>
+                <fieldset className="mt-2">
+                    <div className="space-y-2">
                         {info.map((level, index) => (
                             < div key={level.id} className="flex items-center" >
                                 <input
@@ -112,7 +112,7 @@ export default function Example({ sethtml, setIntonation_dict, postData, enabled
                                     disabled={enabled}
                                     onChange={() => handleRadioChangeInfo(index)}
                                 />
-                                <label htmlFor={level.id} className="ml-3 block text-3xl text-gray-700 cursor-pointer">
+                                <label htmlFor={level.id} className="ml-3 block text-xl text-gray-700 cursor-pointer">
                                     {level.title}
                                 </label>
                             </div>
@@ -122,7 +122,7 @@ export default function Example({ sethtml, setIntonation_dict, postData, enabled
             </div>
             <div
                 onClick={handleStart}
-                className="bg-indigo-600 border border-gray-200 mt-6 rounded-xl p-10 text-5xl text-center font-semibold cursor-pointer text-white">
+                className="bg-indigo-600 border border-gray-200 mt-2 rounded-xl p-3 text-2xl text-center font-semibold cursor-pointer text-white">
                 START
             </div>
         </div >
