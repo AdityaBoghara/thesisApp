@@ -19,7 +19,7 @@ export default function Example({ postData }) {
         document.addEventListener('contextmenu', handelRightClick);
 
         fetch('/start_tracking').then(res => res.json()).then(data => {
-            console.log("")
+            console.log(data)
         });
     }, []);
 
@@ -81,14 +81,18 @@ export default function Example({ postData }) {
         postData('/play', { value: (effect_type) })
             .then(data => {
                 console.log(data); // JSON data parsed by `data.json()` call
+                // console.log(document.getElementById('sound').value)
+                
             });
+            document.getElementById('sound').innerHTML = "Playing: TRUE"
     }
 
     function stop_sound() {
         fetch('/stop_touching').then(res => res.json()).then(data => {
             console.log(data)
+            
         });
-
+        document.getElementById('sound').innerHTML = "Playing: FALSE"
     }
 
     return (

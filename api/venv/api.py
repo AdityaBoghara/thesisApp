@@ -12,7 +12,7 @@ app = Flask(__name__, static_folder='../build', static_url_path='/')
 
 # export FLASK_APP=api
 # flask run
-files_json = '{"text1": "/Users/begona/Documents/GitHub/Thesis/react-flask-app/texts/article.html", "text2":"/Users/begona/Documents/GitHub/Thesis/react-flask-app/texts/article2.html" }'
+files_json = '{"text1": "../../texts/article.html", "text2":"../../texts/article2.html" }'
 global files 
 files = json.loads(files_json)
 
@@ -49,15 +49,16 @@ def start_tracking():
     global sound_api
     sound_api = SoundProcessor()
     tracking.calculate_speed()
-    return {"OK": 200}
+    return {"tracking": 200}
 
 
-@app.route('/get_stats')
-def get_stats():
-    pos = (pyautogui.position())
-    sound_api.stop_flag = tracking.stop_flag
-    playing = (not sound_api.stop_flag) and sound_api.is_touching
-    return {"x_pos": pos.x, "y_pos": pos.y, "speed": tracking.speed, "stop": tracking.stop_flag, "playing": playing}
+# @app.route('/get_stats')
+# def get_stats():
+#     pos = (pyautogui.position())
+#     sound_api.stop_flag = tracking.stop_flag
+#     playing = (not sound_api.stop_flag) and sound_api.is_touching
+#     # return {"x_pos": pos.x, "y_pos": pos.y, "speed": tracking.speed, "stop": tracking.stop_flag, "playing": playing}
+#     return {"stop": tracking.stop_flag, "playing": playing}
 
 
 @app.route('/stop_touching')
